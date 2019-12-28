@@ -1,0 +1,558 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bj" >
+
+    <LinearLayout
+        android:id="@+id/llSum"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+<!-- +++++++++++++++++++++++++++++++++++++++++免责声明+++++++++++++++++++++++++++++++++++++ -->        
+            <TextView
+            android:id="@+id/tvNoDuty"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="免责声明"
+            android:textColor="#ff0000"
+            android:textSize="20sp" />
+         <TextView
+            android:id="@+id/tvNoDutyContent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="声明：该软件只用于学习研究，使用者不得用该软件进行赌博，本人一概不承担任何法律责任，如使用者使用，即表示同意。"
+            android:textColor="#ff0000"
+            android:textSize="16sp" />
+<!-- +++++++++++++++++++++++++++++++++++++++++排雷方式+++++++++++++++++++++++++++++++++++++ -->
+        <ImageView
+            android:id="@+id/iv0"
+            android:layout_width="fill_parent"
+            android:layout_height="15dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />
+    <TextView
+            android:id="@+id/textView2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:text="请选择抢包方式："
+            android:textColor="#ff0000"
+            android:textSize="20sp" />
+            <RadioGroup
+                android:id="@+id/rgRobMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:orientation="vertical" >
+
+                <RadioButton
+                    android:id="@+id/rbAutoRob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="全自动抢包" />
+
+                <RadioButton
+                    android:id="@+id/rbSemiAutoRob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="半自动抢包" />
+            </RadioGroup>
+<!-- +++++++++++++++++++++++++++++++++++++++++发包金额+++++++++++++++++++++++++++++++++++++ -->
+        <ImageView
+            android:id="@+id/iv1"
+            android:layout_width="fill_parent"
+            android:layout_height="15dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />
+        <Switch
+            android:id="@+id/swSec"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.21"
+            android:textOff="关闭"
+            android:textOn="打开"
+            android:checked="false"
+            android:text="秒抢" />
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tvSec"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="设置延时秒数："
+            android:textColor="#0000ff"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etSec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv2"
+            android:layout_width="fill_parent"
+            android:layout_height="15dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />
+        <Switch
+            android:id="@+id/swLargeSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.21"
+            android:textOff="关闭"
+            android:textOn="打开"
+            android:checked="true"
+            android:text="大小玩法" />
+
+        <TextView
+            android:id="@+id/tvBaoZi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.13"
+            android:gravity="left"
+            android:text="额外豹子（单位：分）："
+            android:textColor="#0000ff"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etBaoZi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="111/222/333/444/555/666/777/888/999"
+            android:inputType="number" />
+        <Switch
+            android:id="@+id/swNoSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.21"
+            android:textOff="关闭"
+            android:textOn="打开"
+            android:checked="true"
+            android:text="避小" />
+        <Switch
+            android:id="@+id/swNoSecSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.21"
+            android:textOff="关闭"
+            android:textOn="打开"
+            android:checked="false"
+            android:text="避第二小" />
+       <Switch
+            android:id="@+id/swMiddle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textOff="关闭"
+            android:textOn="打开"
+            android:checked="true"
+            android:text="中间抢" />  
+          <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >      
+
+        <Switch
+            android:id="@+id/swValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="以上"
+            android:textOn="以下"
+            android:checked="true"
+            android:text="数值（分）" />
+
+        <EditText
+            android:id="@+id/etValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />        
+        </LinearLayout>
+        
+        <TextView
+            android:id="@+id/tvLargeSmallSay"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:text="1。额外豹子可不设；2。中间抢打开为当出现指定数值以上或以下时开抢。"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+        <ImageView
+            android:id="@+id/iv3"
+            android:layout_width="fill_parent"
+            android:layout_height="15dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />
+        <!--+++++++++++++++++++++++++++++++++++++++++++++++++尾数玩法-->
+        <Switch
+            android:id="@+id/swTail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.21"
+            android:textOff="关闭"
+            android:textOn="打开"
+            android:checked="false"
+            android:text="尾数玩法" />        
+        <Switch
+            android:id="@+id/swDoubleTail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textOn="双尾"
+            android:textOff="单尾"
+            android:checked="true"
+            android:layout_weight="0.21"
+            android:text="选择类型" />
+        <Switch
+            android:id="@+id/swNoSmall_Tail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.21"
+            android:textOff="关闭"
+            android:textOn="打开"
+            android:checked="true"
+            android:text="避小" />
+       <Switch
+            android:id="@+id/swMiddle_Tail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textOff="关闭"
+            android:textOn="打开"
+            android:checked="true"
+            android:text="中间抢" />  
+          <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >      
+
+        <Switch
+            android:id="@+id/swValue_Tail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="以上"
+            android:textOn="以下"
+            android:checked="true"
+            android:text="数值（分）" />
+
+        <EditText
+            android:id="@+id/etValue_Tail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />        
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvSay_Tail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:text="1。中间抢打开为当出现指定数值以上或以下时开抢。"
+            android:textColor="#000000"
+            android:textSize="16sp" />        
+        <ImageView
+            android:id="@+id/iv04"
+            android:layout_width="fill_parent"
+            android:layout_height="15dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />
+     <!-- ++++++++++++++++++++++++++++++++++++++++++++豹子玩法 -->     
+        <Switch
+            android:id="@+id/swBaoZi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.21"
+            android:textOff="关闭"
+            android:textOn="打开"
+            android:checked="true"
+            android:text="豹子玩法" />          
+        <TextView
+            android:id="@+id/tvBaoZi_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.13"
+            android:gravity="left"
+            android:text="豹子（单位：分）："
+            android:textColor="#0000ff"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etBaoZi_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="111/222/333/444/555/666/777/888/999"
+            android:inputType="number" />   
+        <TextView
+            android:id="@+id/tvValue_BaoZi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:text="1。豹子玩法可与其它玩法组合使用。"
+            android:textColor="#000000"
+            android:textSize="16sp" />            
+        <ImageView
+            android:id="@+id/iv05"
+            android:layout_width="fill_parent"
+            android:layout_height="15dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />   
+ <!-- +++++++++++++++++++++++拆包后自动返回+++++++++++++++++++++++++++++++++++++++++++ -->
+        <TextView
+            android:id="@+id/tvSelReturn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:text="请选择拆包后是否自动返回："
+            android:textColor="#ff0000"
+            android:textSize="20sp" />
+            <RadioGroup
+                android:id="@+id/rgSelReturn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:orientation="vertical" >
+
+                <RadioButton
+                    android:id="@+id/rbAutoReturn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="拆包后自动返回" />
+
+                <RadioButton
+                    android:id="@+id/rbManualReturn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="拆包后手动返回" />
+            </RadioGroup> 
+    <!-- +++++++++++++++++++++++透视 +++++++++++++++++++++++++++++++++++++++++++ -->      
+         <ImageView
+            android:id="@+id/iv06"
+            android:layout_width="fill_parent"
+            android:layout_height="15dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />   
+        <Switch
+            android:id="@+id/swPerspact"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.21"
+            android:textOff="关闭"
+            android:textOn="打开"
+            android:checked="false"
+            android:text="透视" />
+       <TextView
+            android:id="@+id/tvPerspactSay"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:text="[说明]透视功能为：红包来了，不拆包即可知道红包里面的个数和金额！"
+            android:textColor="#000000"
+            android:textSize="16sp" />   
+       <!-- +++++++++++++++++++++++语音模式 +++++++++++++++++++++++++++++++++++++++++++ -->
+		<ImageView
+            android:id="@+id/iv08"
+            android:layout_width="fill_parent"
+            android:layout_height="15dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />   
+        <TextView
+            android:id="@+id/tvSelSoundMode"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:text="请选择发音模式："
+            android:textColor="#ff0000"
+            android:textSize="20sp" />
+  			<com.example.h3.FlowRadioGroup
+                android:id="@+id/rgSelSoundMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:orientation="horizontal" >
+                <RadioButton
+                    android:id="@+id/rbFemaleSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="女声" />
+                <RadioButton
+                    android:id="@+id/rbMaleSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="男声" />
+                <RadioButton
+                    android:id="@+id/rbSpecialMaleSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="特别男声" />
+                <RadioButton
+                    android:id="@+id/rbMotionMaleSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="情感男声" />
+                 <RadioButton
+                    android:id="@+id/rbChildrenSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="情感儿童声" />
+                <RadioButton
+                    android:id="@+id/rbCloseSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="关闭语音提示" />
+           </com.example.h3.FlowRadioGroup> 
+         <ImageView
+            android:id="@+id/iv07"
+            android:layout_width="fill_parent"
+            android:layout_height="15dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />  
+         
+        
+  <!-- +++++++++++++++++++++++设置拆包速度+++++++++++++++++++++++++++++++++++++++++++ -->            
+        
+       
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="28dp"
+                android:layout_marginTop="14dp"
+                android:text="请设置拆包速度:当前拆包延迟：10"
+                android:textColor="#00ff00"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/seekBar1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:progress="10"
+                android:max="100" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="开启QQ抢红包服务" />
+
+            <Button
+                android:id="@+id/btConcel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="启动QQ" />
+           <Button
+                android:id="@+id/btClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="关闭" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvRegState"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:text="授权状态：未授权"
+            android:textColor="#ff0000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvRegWarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:text="警告：未授权用户中小机率会有所增加！技术及授权联系QQ：1339524332微信byc6354。"
+            android:textColor="#ff0000"
+            android:textSize="16sp" />
+       <TextView
+            android:id="@+id/tvHomePage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:text="官方下载地址：\nhttp://119.23.68.205/android/android.htm"
+            android:textColor="#0000ff"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tvPlease"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:text="请输入授权码："
+            android:textColor="#ff0000"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etRegCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="12" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/btReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确定" />
+    </LinearLayout>
+
+</ScrollView>
